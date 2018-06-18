@@ -20,7 +20,8 @@ public class Bird : MonoBehaviour {
         if(Input.GetMouseButtonUp(0) && transform.position.y <= 4.65)
         {
             Rig.velocity = new Vector2(Rig.velocity.x, Fly);
-            audiosource.PlayOneShot(Wing);
+            if(Manager.FrameGameOver != true)
+                audiosource.PlayOneShot(Wing);
         }
         if (transform.position.y > 4.65)
         {
