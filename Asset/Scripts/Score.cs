@@ -5,7 +5,7 @@ using UnityEngine;
 public class Score : MonoBehaviour {
     public Sprite[] ArrNumbers;
     public Transform Parent;
-    static int Point = 0;
+    public static int Point = 0;
     int HangChuc = 0;
     int HangDV = 0;
     int HangTram = 0;
@@ -63,7 +63,10 @@ public class Score : MonoBehaviour {
     {
         int Temp = PlayerPrefs.GetInt("Player");
         if(Point > Temp)
-            PlayerPrefs.SetInt("Player",Point);
+        {
+            PlayerPrefs.SetInt("Player", Point);
+            PlayerPrefs.Save();
+        }
     }
     public static int LoadScore()
     {
