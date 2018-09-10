@@ -9,7 +9,6 @@ public class Colum : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         Choice = RanD();
-        Debug.Log(Choice);
     }
 	
 	// Update is called once per frame
@@ -59,15 +58,14 @@ public class Colum : MonoBehaviour {
     {
        switch(c)
         {
-            case 0: break;
-            case 1: ChangeStateDown(); break;
-            case 2: ChangeStateUpAndDown(); break;
-            case 3: ChangeStateUp(); break;
+            case 0: ChangeStateDown(); break;
+            case 1: ChangeStateUpAndDown(); break;
+            case 2: ChangeStateUp(); break;
         }
     }
     int RanD()
     {
-        int r = Random.Range(0, 4);
+        int r = Random.Range(0, 3);
         return r;
     }
 }

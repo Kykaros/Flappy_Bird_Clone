@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class Fixframe : MonoBehaviour {
     // Use this for initialization
-    Bounds Temp;
     SpriteRenderer sr;
 
-    bool IsChange = false;
     void Start()
     {
         sr = GetComponent<SpriteRenderer>();
@@ -24,12 +22,18 @@ public class Fixframe : MonoBehaviour {
     }
     void ChangeFrame()
     {
+        //lay localscale hien tai cua frame
         Vector3 TempScale = transform.localScale;
 
+        //lay chieu cao cua hinh
         float Height = sr.bounds.size.y;
+
+        //lay chieu ngang cua hinh
         float width = sr.bounds.size.x;
 
+        //size camera x2
         float WorldHeight = Camera.main.orthographicSize * 2f;//10
+        
         float WorldWidth = WorldHeight * Screen.width / Screen.height;
 
         TempScale.y = WorldHeight / Height;

@@ -11,13 +11,13 @@ public class Trailer : MonoBehaviour {
     double currtime;
     void Start()
     {
+        //lay do dai cua vid
         time = GetComponent<VideoPlayer>().clip.length;
-        Debug.Log(time);
     }
     void Update()
     {
+        //lay thoi gian hien tai cua video
         currtime = gameObject.GetComponent<VideoPlayer>().time;
-        Debug.Log(currtime);
         if (currtime >= time)
             SceneManager.LoadScene(1);
     }

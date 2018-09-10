@@ -1,20 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Manager : MonoBehaviour
 {
+    public GameObject Win;
     public Sprite Gameover;
     public Sprite Startgame;
     bool IsOpen = false;
     public static bool FrameGameOver = false;
     public GameObject Again;
     public GameObject score;
+    public GameObject DisplayScore;
     int ChangeState = 5;
     // Use this for initialization
     void Start()
     {
         StartGame();
+        Win.SetActive(false);
     }
 
     // Update is called once per frame
@@ -24,6 +28,7 @@ public class Manager : MonoBehaviour
         {
             Time.timeScale = 1;
             this.GetComponent<SpriteRenderer>().sprite = null;
+            DisplayScore.SetActive(true);
             IsOpen = true;
         }
         if (Bird.Death == true)
@@ -33,11 +38,10 @@ public class Manager : MonoBehaviour
             //luu diem
             Score.SaveScore();
         }
-        if(Score.Point == ChangeState)
+        if(Score.Point == 999)
         {
-            //SpawnColum.SetRepeatTime(SpawnColum.RepeatTime - 0.5f);
-            //ChangeState += 5;
-            //Debug.Log(ChangeState);
+            //win
+            Win.SetActive(true);
         }
     }
     void GameOver()

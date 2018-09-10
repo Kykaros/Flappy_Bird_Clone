@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.Video;
-
 public class ManagerButton : MonoBehaviour {
     bool IsClick = false;
     public static int Select = 1;

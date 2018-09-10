@@ -9,9 +9,6 @@ public class Bird : MonoBehaviour {
 
     public AudioClip Hit, Wing;
     public AudioSource audiosource;
-    // Use this for initialization
-    void Start () {
-	}
 	
 	// Update is called once per frame
 	void Update () {
@@ -46,12 +43,7 @@ public class Bird : MonoBehaviour {
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Colum")
-        {
-            audiosource.PlayOneShot(Hit);
-            Death = true;
-        }
-        else if(collision.gameObject.tag == "Ground")
+        if(collision.gameObject.tag == "Colum" ||collision.gameObject.tag == "Ground")
         {
             audiosource.PlayOneShot(Hit);
             Death = true;

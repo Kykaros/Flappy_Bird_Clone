@@ -5,14 +5,13 @@ using UnityEngine;
 public class Score : MonoBehaviour {
     public Sprite[] ArrNumbers;
     public Transform Parent;
-    public static int Point = 0;
+    public static  int Point = 0;
     int HangChuc = 0;
     int HangDV = 0;
     int HangTram = 0;
     int Temp = 0;
 	// Use this for initialization
 	void Start () {
-        //Parent.GetChild(0).GetComponent<SpriteRenderer>().sprite = ArrNumbers[Point];
         ResetScore();
         for (int i = 1; i<3 ; i++)
         {
@@ -72,17 +71,4 @@ public class Score : MonoBehaviour {
     {
         return PlayerPrefs.GetInt("Player");
     }
-    ////lay duong dan luu file xml
-    //private string getpath(string filename)
-    //{
-    //    return Application.dataPath + "/" + filename;
-    //}
-    ////luu file
-    //public void Save(string namefile)
-    //{
-    //    //duong dan luu file xml
-    //    Path = getpath(namefile) + "xml";
-    //    //tao file xml document
-    //    XDocument
-    //}
 }

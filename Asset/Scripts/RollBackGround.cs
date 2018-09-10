@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class RollBackGround : MonoBehaviour {
     public float Speed = 5f;
-    public Vector3 StartPosition;
+    Vector3 StartPosition;
 	// Use this for initialization
 	void Start () {
-        StartPosition = transform.position;	
+        StartPosition = transform.position;
 	}
 	
 	// Update is called once per frame
